@@ -57,10 +57,16 @@ class SequenceMatcherTest < Minitest::Test
     matcher = SequenceMatcher.new("gbry", "gryb")
     assert_equal 1, matcher.position_count
   end
-  
+
   def test_it_count_two_matching_positions
     matcher = SequenceMatcher.new("gbry", "gbyr")
     assert_equal 2, matcher.position_count
   end
+
+  def test_it_counts_three_matching_positions
+    matcher = SequenceMatcher.new("gbry", "gbrr")
+    assert_equal 3, matcher.position_count
+  end
+
 
 end
