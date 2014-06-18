@@ -32,4 +32,10 @@ class SequenceMatcher
 
     secret_chars.zip(guess_chars).count{|first, second| first == second}
   end
+
+  def match_data
+    {:correct_letters  => match_count,
+     :correct_position => position_count,
+     :full_match       => match? }
+  end
 end
