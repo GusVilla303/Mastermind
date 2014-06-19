@@ -20,7 +20,7 @@ class SequenceMatcherTest < Minitest::Test
     assert_equal "bbby", matcher.guess
   end
 
-  def test_another_guess
+  def test_another_guess_sequence
     matcher = SequenceMatcher.new("gggr", "gggr")
     assert_equal "gggr", matcher.guess
   end

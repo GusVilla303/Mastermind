@@ -17,6 +17,8 @@ class Game
   end
 
   def won?
-    @won
+    if match? == true
+    end
+  end
 
 end

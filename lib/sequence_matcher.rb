@@ -1,10 +1,11 @@
-class SequenceMatcher
+require 'pry'
 
+class SequenceMatcher
   attr_reader :secret, :guess
 
   def initialize(secret, guess)
-    @secret = secret
-    @guess = guess
+    @secret = secret.letters
+    @guess  = guess.letters
   end
 
   def match?
@@ -12,30 +13,32 @@ class SequenceMatcher
   end
 
   def match_count
-    guess_chars  = guess.chars
-    secret_chars = secret.chars
     count        = 0
+    secret_match = @secret.dup
 
-    guess_chars.each do |char|
-      if secret_chars.include?(char)
-      count += 1
-      secret_chars.slice!(secret_chars.index(char))
+    guess.each do |char|
+      if secret_match.include?(char)
+        count += 1
+        secret_match.delete_at(secret_match.index(char))
       end
+    end
+
+    count
+  end
+
+  def position_count
+    count = 0
+    guess.each_with_index do |char, index|
+      count += 1 if char == secret[index]
     end
     count
   end
 
-
-  def position_count
-    guess_chars  = guess.chars
-    secret_chars = secret.chars
-
-    secret_chars.zip(guess_chars).count{|first, second| first == second}
-  end
-
   def match_data
-    {:correct_letters  => match_count,
+    {
+     :correct_letters  => match_count,
      :correct_position => position_count,
-     :full_match       => match? }
+     :full_match       => match?
+    }
   end
 end

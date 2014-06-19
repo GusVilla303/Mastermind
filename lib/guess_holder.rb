@@ -1,6 +1,7 @@
 class GuessHolder
 
-  attr_reader   :guess_holder
+  attr_reader     :guess_holder
+  attr_accessor   :guess_counter
 
   def initialize
     @guess_holder = []

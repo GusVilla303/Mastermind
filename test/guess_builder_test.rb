@@ -5,7 +5,7 @@ require_relative '../lib/guess_builder'
 
 class GuessBuilderTest < Minitest::Test
   def test_it_exists
-    assert GuessBuilder
+    assert GuessBuilder.new
   end
 
   def test_it_is_happy_with_a_correct_length_guess
@@ -19,4 +19,12 @@ class GuessBuilderTest < Minitest::Test
     guess = gb.build('aaa')
     refute guess.valid?
   end
+
+  def test_a_too_long_guess_is_invalid
+    gb = GuessBuilder.new
+    guess = gb.build('bbbbb')
+    refute guess.valid?
+  end
+
+
 end

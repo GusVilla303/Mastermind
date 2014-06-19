@@ -1,4 +1,3 @@
-gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/game'
@@ -21,18 +20,14 @@ class GameTest < Minitest::Test
     skip
   end
 
-
-  #Jeff's code from out meeting. Variable names differ!!
+end
+  #Jeff's code from our meeting. Variable names differ!!
 
   # def test_player_can_win_a_game_on_the_first_guess
   #   game = Game.new
   #   secret = game.sequence
   #   game.guess(secret)
   #   assert game.won?
-  # end
+
 
   # def test_player_can_win_a_game_on_the second_guess
-
-
-
-end

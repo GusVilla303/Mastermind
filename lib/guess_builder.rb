@@ -1,17 +1,17 @@
-class GuessBuilder
-  def build(input)
-    Guess.new(input)
-  end
-end
+# class GuessBuilder
+#   def build(input)
+#     Guess.new(input)
+#   end
+# end
 
 class Guess
-  attr_reader :code
+  attr_reader :letters
 
   def initialize(input)
-    @code = input
+    @letters = input.chars
   end
 
   def valid?
-    @code.length == 4
+    @letters.length == 4
   end
 end

@@ -32,18 +32,3 @@ class GuessHolderTest < Minitest::Test
     assert_equal 4, holder.guess_counter
   end
 end
-
-  # def test_it_can_add_15_guesses
-  #   holder = GuessHolder.new
-  #   15.times { holder.add_guess('rgby').shuffle }
-  #   assert_equal 15, holder.guess_counter
-  # end
-
-  #Do I need a guess 'guess_history' since
-  #'guess_holder' already retains the count?
-
-  # def test_that_guesses_are_in_the_guess_holder
-  #   skip
-  #   holder = GuessHolder.new
-  #   assert_equal 2, holder.guess_history
-  # end
