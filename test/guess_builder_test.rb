@@ -25,6 +25,4 @@ class GuessBuilderTest < Minitest::Test
     guess = gb.build('bbbbb')
     refute guess.valid?
   end
-
-
 end

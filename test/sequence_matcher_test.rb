@@ -69,24 +69,24 @@ class SequenceMatcherTest < Minitest::Test
   end
 
   def test_it_provides_match_feedback_on_a_guess
-    matcher = SequenceMatcher.new("gbry", "gbbr")
-    expected = {
-      :correct_letters => 3,
-      :correct_position => 2,
-      :full_match => false
-    }
+    matcher  = SequenceMatcher.new("gbry", "gbbr")
+    expected =
+      {
+        :correct_letters => 3,
+        :correct_position => 2,
+        :full_match => false
+      }
     assert_equal expected, matcher.match_data
   end
 
   def test_it_provides_match_data_on_a_correct_guess
-    matcher = SequenceMatcher.new("gbry", "gbry")
-    expected = {
-      :correct_letters => 4,
-      :correct_position => 4,
-      :full_match => true
-    }
+    matcher  = SequenceMatcher.new("gbry", "gbry")
+    expected =
+      {
+        :correct_letters => 4,
+        :correct_position => 4,
+        :full_match => true
+      }
     assert_equal expected, matcher.match_data
   end
-
-
 end

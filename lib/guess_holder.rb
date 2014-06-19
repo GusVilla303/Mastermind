@@ -12,12 +12,6 @@ class GuessHolder
   end
 
   def guess_counter
-    @guess_holder.count
+    @guess_holder.size
   end
 end
-
- #I need a guess holder array
- #I need to put the guesses into
- #this array
- #I need to check that the guesses are
- #in the array

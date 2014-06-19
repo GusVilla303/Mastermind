@@ -1,5 +1,3 @@
-require 'pry'
-
 class SequenceMatcher
   attr_reader :secret, :guess
 

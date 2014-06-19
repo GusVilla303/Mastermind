@@ -1,11 +1,7 @@
 class Game
-
-#attr_reader :started_at
-
   def initialize
     @count = 0
     @won = false
-    #Generate the secret sequence
   end
 
   def count
@@ -20,5 +16,4 @@ class Game
     if match? == true
     end
   end
-
 end

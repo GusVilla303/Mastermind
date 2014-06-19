@@ -14,4 +14,8 @@ class Guess
   def valid?
     @letters.length == 4
   end
+
+  def to_s
+    @letters.join.upcase
+  end
 end
